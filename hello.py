@@ -10,4 +10,4 @@ def app(environ, start_response):
         ('Content-Length', str(len(data)))
     ]
     start_response(status, response_headers)
-return [d]
+    return [d]
