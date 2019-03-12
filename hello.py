@@ -2,7 +2,7 @@ def app(environ, start_response):
     # Returns a dictionary in which the values are lists
 
     data = environ['QUERY_STRING']
-    d = '\n'.join(str(data).split("&"))
+    d = [bytes(i + '\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
 
     status = '200 OK'
     response_headers = [
