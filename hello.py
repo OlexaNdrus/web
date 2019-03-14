@@ -7,5 +7,5 @@ def app(environ, start_response):
     start_response(status, response_headers)
     resp = "\r\n".join(environ['QUERY_STRING'].split("&"))
 
-    return resp.encode('utf-8')
+    return [resp.encode('utf-8')]
 
