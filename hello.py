@@ -6,6 +6,6 @@ def app(environ, start_response):
     response_headers = [('Content-Type', 'text/plain')]
     start_response(status, response_headers)
     resp = environ['QUERY_STRING'].split("&")
-    resp = [item.encode('utf-8') + "\n" for item in resp]
+    resp = [item.encode('utf-8') for item in resp]
     return resp
 
