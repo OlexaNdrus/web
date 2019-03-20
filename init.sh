@@ -1,10 +1,10 @@
+#!/usr/bin/env bash
 
-sudo gunicorn -c /home/box/web/ask/django.conf ask.wsgi:application
-
-sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /home/box/web/ask/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
+sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
 sudo /etc/init.d/nginx restart
-sudo ln -s /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/test
+sudo ln -sf /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/test
+sudo ln -sf /home/box/web/etc/django.conf   /etc/gunicorn.d/test
 sudo /etc/init.d/gunicorn restart
 cd /home/box/web/
 sudo gunicorn -c /home/box/web/etc/gunicorn.conf -b 0.0.0.0:8080 hello:app
+sudo gunicorn -c /home/box/web/etc/django.conf -b 0.0.0.0:8000 ask.ask.wsgi:application
