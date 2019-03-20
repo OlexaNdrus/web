@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo pip install --upgrade python
 sudo pip install --upgrade django
 sudo pip install --upgrade gunicorn
 
@@ -10,4 +11,4 @@ sudo ln -sf /home/box/web/etc/django.conf   /etc/gunicorn.d/test
 sudo /etc/init.d/gunicorn restart
 cd /home/box/web/
 sudo gunicorn -c /home/box/web/etc/gunicorn.conf -b 0.0.0.0:8080 hello:app
-sudo gunicorn -c /home/box/web/etc/django.conf -b 0.0.0.0:8000 ask.ask.wsgi:application
+sudo gunicorn -c /home/box/web/etc/django.conf -b 0.0.0.0:8000 ask.wsgi:application
