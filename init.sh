@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-sudo pip install --upgrade python
+virtualenv -p python3 myvenv
+source myvenv/bin/activate
+sudo pip install --upgrade pip
 sudo pip install --upgrade django
 sudo pip install --upgrade gunicorn
 
