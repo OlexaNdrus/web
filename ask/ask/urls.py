@@ -32,7 +32,7 @@ urlpatterns = [
 
     url(r'^admin/', test),
     url(r'^question/', test),
-
+    url(r'^(?P<num>\d+)/$', test),
     url(r'^', test),
     url(r'^$', include('qa.urls')), url(r'^question/(\d+)/$', include('qa.urls'))
 ]

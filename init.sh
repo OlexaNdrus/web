@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-virtualenv -p python3 myvenv
-source myvenv/bin/activate
-sudo pip install --upgrade pip
-sudo pip install --upgrade django
-sudo pip install --upgrade gunicorn
+
 
 sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
 sudo /etc/init.d/nginx restart
