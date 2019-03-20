@@ -20,20 +20,8 @@ from ask.qa.views import test
 
 urlpatterns = [
 
-    url(r'^$', test),
+    url(r'^', include('qa.urls')),
 
-    url(r'^init25/', test),
-    url(r'^login/', test),
-    url(r'^signup/', test),
-    url(r'^ask/', test),
 
-    url(r'^popular/', test),
-    url(r'^new/', test),
-
-    url(r'^admin/', test),
-    url(r'^question/', test),
-    url(r'^(?P<num>\d+)/$', test),
-    url(r'^', test),
-    url(r'^$', include('qa.urls')), url(r'^question/(\d+)/$', include('qa.urls'))
 ]
 
