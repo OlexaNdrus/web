@@ -1,14 +1,15 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from . import views
+from qa.views import test
 
 urlpatterns = [
-    url(r'^$', views.test, name='index'),
-    url(r'^popular/.*$', views.test, name='popular'),
-    url(r'^ask/.*$', views.test, name='ask'),
-    url(r'^signup/.*$', views.test, name='signup'),
-    url(r'^login/.*$', views.test, name='login'),
-    url(r'^new/.*$', views.test),
-    url(r'^question/(?P<question_id>[0-9]+)/$', views.test, name='question'),
+    url(r'^$', test),
+    url(r'^blablabla/.*$', test),
+    url(r'^popular/.*$', test),
+    url(r'^ask/.*$', test),
+    url(r'^signup/.*$', test),
+    url(r'^login/.*$', test),
+    url(r'^new/.*$', test),
+    url(r'^question/(?P<question_id>[0-9]+)/$', test),
 ]
