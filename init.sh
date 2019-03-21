@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
+#!/bin/sh
+
 
 #sudo pip3 install django=2.0.0
 
