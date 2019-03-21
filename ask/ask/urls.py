@@ -29,6 +29,6 @@ urlpatterns = [
     url(r'^signup/.*$', test),
     url(r'^login/.*$', test),
     url(r'^new/.*$', test),
-    url(r'^question/(\d+)&', test),
+    url(r'^question/(?P<question_id>[0-9]+)/$', test),
 ]
 
