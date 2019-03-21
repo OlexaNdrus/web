@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.conf.urls import url, include
-from ask.qa.views import test
+from qa.views import test
 
 from django.contrib import admin
 

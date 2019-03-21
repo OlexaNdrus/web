@@ -2,8 +2,7 @@
 
 
 
-#sudo pip3 install django=2.0.0
-
+sudo pip3 install django=2.0.0
 sudo pip3 install --upgrade gunicorn
 
 sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
