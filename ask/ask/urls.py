@@ -15,13 +15,20 @@ Including another URLconf
 """
 
 from django.conf.urls import url, include
+from ask.qa.views import test
 
+from django.contrib import admin
+
+admin.autodiscover()
 
 
 urlpatterns = [
-
-    url(r'^', include('qa.urls')),
-
-
+    url(r'^$', test),
+    url(r'^popular/.*$', test),
+    url(r'^ask/.*$', test),
+    url(r'^signup/.*$', test),
+    url(r'^login/.*$', test),
+    url(r'^new/.*$', test),
+    url(r'^question/(\d+)&', test),
 ]
 
