@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo pip3 install django=2.0.0
+#sudo pip3 install django=2.0.0
 
 sudo pip3 install --upgrade gunicorn
 
