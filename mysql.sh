@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
 sudo /etc/init.d/mysql start
-mysql -uroot -e "create database stepik_web"
-mysql -uroot -e "CREATE USER 'OlexaNdrus' IDENTIFIED BY '123';"
-mysql -uroot -e "GRANT ALL ON stepik_web.* TO 'OlexaNdrus';"
-mysql -uroot -e "FLUSH PRIVILEGES;"
+mysql -uroot -e "CREATE DATABASE stepic_web;"
+mysql -uroot -e "GRANT ALL PRIVILEGES ON stepic_web.* TO 'box'@'localhost' WITH GRANT OPTION;"
 
 
 python manage.py makemigrations qa
 python manage.py migrate qa
-
 
