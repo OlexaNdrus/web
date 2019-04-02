@@ -5,3 +5,4 @@
 
 sudo pip3 install django==2.0
 sudo pip3 install --upgrade gunicorn
+alias python='/usr/bin/python3.4'
