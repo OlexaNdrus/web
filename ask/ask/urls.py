@@ -25,7 +25,6 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', index),
-    url(r'^/$', index),
     url(r'^popular/.*$', popular),
     url(r'^ask/.*$', ask),
     url(r'^signup/.*$', signup),
