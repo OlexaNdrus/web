@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.conf.urls import url
+from django.conf.urls import url,include
 from qa.views import test,index,popular,question,ask,signup,login_view
 from ask.views import found, not_found, init25
 
@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^signup/.*$', signup),
     url(r'^login/.*$', login_view),
     url(r'^new/.*$', found),
-    url(r'^question/(?P<question_id>[0-9]+)/$', question),
+    url(r'^question/', include('qa.urls')),
 
 
     url(r'^', not_found),
