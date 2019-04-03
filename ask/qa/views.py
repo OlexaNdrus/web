@@ -16,7 +16,7 @@ def index(request):
         page = 1
     except TypeError:
         page = 1
-    questions = Question.objects.new()
+    questions = Question.objects.all().order_by('-id')
     paginator = Paginator(questions, 10)
     page = paginator.page(page)
 
@@ -36,7 +36,7 @@ def popular(request):
         page = 1
     except TypeError:
         page = 1
-    questions = Question.objects.popular()
+    questions = Question.objects.all().order_by('-rating')
     paginator = Paginator(questions, 10)
     page = paginator.page(page)
 
