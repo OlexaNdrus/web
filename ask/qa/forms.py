@@ -2,10 +2,12 @@ from django import forms
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from django.views.decorators import csrf
 
 from qa.models import Question, Answer
 
 
+@csrf.csrf_exempt
 class AskForm(forms.Form):
     title = forms.CharField(max_length=100)
     text = forms.CharField(widget=forms.Textarea)
@@ -15,7 +17,7 @@ class AskForm(forms.Form):
 
     def save(self):
         question = Question(**self.cleaned_data)
-        question.author_id = self._user.id
+        question.author_id = User.objects.get(pk=1)
         question.save()
         return question
 
