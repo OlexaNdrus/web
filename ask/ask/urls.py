@@ -32,7 +32,6 @@ urlpatterns = [
     url(r'^new/.*$', found),
     url(r'^question/', include('qa.urls')),
 
-
     url(r'^', not_found),
 ]
 
